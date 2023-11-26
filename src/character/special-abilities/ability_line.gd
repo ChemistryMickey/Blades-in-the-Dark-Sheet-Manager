@@ -22,19 +22,18 @@ func _on_ability_item_selected(index):
 
 func save() -> Dictionary:
 	var abilities: Dictionary = DatabaseLoader.json_dicts[database];
-	var ability_num = 0;
 	var ability_name = "";
 	if $ability.selected != -1:
-		ability_num = $ability.selected;
 		ability_name = abilities.keys()[$ability.selected];
 
 	return {
 		"Proficient": $proficient.button_pressed,
-		"Ability Number": ability_num,
 		"Ability Name": ability_name
 	}
 
 func load_sheet(ability_entry: Dictionary) -> void:
+	var keys: Array = DatabaseLoader.json_dicts[database].keys();
+	var selected = keys.find(ability_entry["Ability Name"])
 	$proficient.button_pressed = ability_entry["Proficient"];
-	$ability.selected = ability_entry["Ability Number"];
-	_on_ability_item_selected(ability_entry["Ability Number"]);
+	$ability.selected = selected;
+	_on_ability_item_selected(selected);

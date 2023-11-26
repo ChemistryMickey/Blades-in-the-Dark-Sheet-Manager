@@ -26,5 +26,6 @@ func save() -> Dictionary:
 func load_sheet(ability_dict: Dictionary) -> void:
 	var keys = database.keys();
 	$OptionButton.selected = keys.find(ability_dict["Ability Name"]);
+	_on_option_button_item_selected(keys.find(ability_dict["Ability Name"]));
 	$CheckBox.button_pressed = ability_dict["Proficient"]
 

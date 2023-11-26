@@ -118,5 +118,17 @@
     "Side Business": {
         "Definition": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat.",
         "Example": "What kind of legitimate business is this? How do you get paid in secret?"
+    },
+    "Drug Den": {
+        "Definition": "(Tier Roll) - Heat = Coin in Downtime",
+        "Example": ""
+    },
+    "Hagfish Farm": {
+        "Definition": "+1d6 to reduce heat after killing",
+        "Example": ""
+    },
+    "Gambling Den": {
+        "Definition": "(Tier Roll) - Heat = Coin in Downtime",
+        "Example": ""
     }
 }

@@ -66,5 +66,17 @@
     "Just passing through": {
         "Definition": "During downtime, take -1 heat. When your heat is 4 or less, you get +1d to deceive people when you pass yourselves off as ordinary citizens.",
         "Example": ""
+    },
+    "Everyone Steals": {
+        "Definition": "Each PC may add +1 action rating to Prowl, Finesse, or Tinker (up to a max of 3)",
+        "Example": ""
+    },
+    "Ghost Echoes": {
+        "Definition": "From weird experience or occult ritual, all crew members gain the ability to see and interact with ghostly structures, streets, and objects within the echo of Doskvol that exists in the ghost field.",
+        "Example": ""
+    },
+    "Slippery": {
+        "Definition": "When you roll entanglements, roll twice and keep the one you want. When you reduce heat on the crew, take +1d6",
+        "Example": ""
     }
 }

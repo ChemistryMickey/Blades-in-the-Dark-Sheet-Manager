@@ -540,6 +540,9 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="VSeparator" type="VSeparator" parent="."]
+layout_mode = 2
+
 [node name="playbook" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -606,6 +609,9 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="VSeparator2" type="VSeparator" parent="."]
+layout_mode = 2
 
 [node name="scrollUpgrades" type="ScrollContainer" parent="."]
 clip_contents = false
