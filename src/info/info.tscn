@@ -1,0 +1,467 @@
+[gd_scene load_steps=3 format=3 uid="uid://3fp15o71j4l1"]
+
+[ext_resource type="Script" path="res://src/info/info.gd" id="1_bukbp"]
+[ext_resource type="Script" path="res://src/info/tooltip.gd" id="2_qyxd4"]
+
+[node name="Info" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_bukbp")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="additional-rules" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="header" type="VBoxContainer" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/additional-rules/header"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Additional Game Rules"
+
+[node name="website-link" type="RichTextLabel" parent="ScrollContainer/additional-rules/header"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+text = "The DM is final arbiter always but here's the Blades in the Dark website URL: https://bladesinthedark.com"
+fit_content = true
+selection_enabled = true
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/additional-rules/header"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/additional-rules/header"]
+layout_mode = 2
+
+[node name="experience" type="HBoxContainer" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/additional-rules/experience"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+text = "Earning Experience"
+
+[node name="spacer" type="Control" parent="ScrollContainer/additional-rules/experience"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextEdit" type="RichTextLabel" parent="ScrollContainer/additional-rules/experience"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "- Every time you roll a desperate action, mark XP in that action's attribute
+
+[i] At the end of each session, for each item below, mark 1 XP (in your playbook or attribute) or 2 xp if that item occurred multiple times: [/i]
+
+- You addressed a challange with _____________________
+- You expressed your beliefs, drives, heritage, or background
+- You struggled with issues from your vice or traumas during the session
+"
+fit_content = true
+
+[node name="HSeparator5" type="HSeparator" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+
+[node name="planning" type="HBoxContainer" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/additional-rules/planning"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+text = "Planning"
+
+[node name="spacer" type="Control" parent="ScrollContainer/additional-rules/planning"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextEdit" type="RichTextLabel" parent="ScrollContainer/additional-rules/planning"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "Choose a plan then provide the missing detail for the operation:
+	[b]Assault:[/b] Point of attack
+	[b]Deception:[/b] Method
+	[b]Stealth:[/b] Point of Entry
+	[b]Occult:[/b] Arcane Power
+	[b]Social:[/b] Connection
+	[b]Transport:[/b] Route"
+fit_content = true
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+
+[node name="teamwork" type="HBoxContainer" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Assist
+	When you assist another player who’s rolling, describe what your character does to help. 
+	Take 1 stress and give them +1d to their roll. You might also suffer any consequences that occur because of the roll, depending on the circumstances. 
+	Only one character may assist a given roll. 
+	If you really want to help and someone else is already assisting, consider performing a setup maneuver instead.
+
+	A character may assist a group action, but only if they aren’t taking part in it directly. You decide which character in the group action gets the bonus die.
+-----------------------
+Lead a group action
+
+	When you lead a group action, you coordinate multiple members of the team to tackle a problem together. 
+	Describe how your character leads the team in a coordinated effort. 
+	Do you bark orders, give subtle hand signals, or provide charismatic inspiration?
+
+	Each PC who’s involved makes an action roll (using the same action) and the team counts the single best result as the overall effort for everyone who rolled. 
+	However, the character leading the group action takes 1 stress for each PC that rolled 1-3 as their best result.
+
+    This is how you do the “we all sneak into the building” scene. Everyone who wants to sneak in rolls their Prowl action, and the best result counts for the whole team. The leader suffers stress for everyone who does poorly. It’s tough covering for the stragglers.
+
+	The group action result covers everyone who rolled. If you don’t roll, your character doesn’t get the effects of the action.
+
+	Your character doesn’t have to be especially skilled at the action at hand in order to lead a group action. 
+	This maneuver is about leadership, not necessarily about ability. 
+	You can also lead your crew’s cohorts with a group action. 
+	Roll Command if you direct their efforts, or roll the appropriate action rating if you participate alongside them. 
+	The cohort rolls its quality level.
+-----------------------
+Protect
+
+	You step in to face a consequence that one of your teammates would otherwise face. 
+	You suffer it instead of them. You may roll to resist it as normal. Describe how you intervene.
+
+    This is how you do the “I’ll dive in front of the bullet” You cover for a teammate, suffering any harm or consequences that still linger after you’ve rolled to resist. 
+	It hurts, cost stress, and may leave you in a bad spot. But hey, you’re a hero.
+-----------------------
+Set up
+
+	When you perform a setup action, you have an indirect effect on an obstacle. 
+	If your action has its intended result, any member of the team who follows through on your maneuver gets +1 effect level or improved position for their roll. 
+	You choose the benefit, based on the nature of your setup action.
+
+    This is how you do the “I’ll create a distraction” scene. 
+	You roll Sway to distract a constable with your charms, then any teammate who follows through with a Prowl action to sneak past him can get improved position. 
+	It’s less risky since you’re drawing the guard’s attention.
+
+    The PCs are facing a heavily armored carriage that’s immune to their weapons. Aldo uses Wreck as a setup action to pry some of the armor loose with his crowbar, giving follow up actions +1 effect—going from zero to limited effect.
+"
+script = ExtResource("2_qyxd4")
+
+[node name="Label" type="Label" parent="ScrollContainer/additional-rules/teamwork"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+text = "Teamwork"
+
+[node name="spacer" type="Control" parent="ScrollContainer/additional-rules/teamwork"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextEdit" type="RichTextLabel" parent="ScrollContainer/additional-rules/teamwork"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[b]Assist:[/b] A teammate: Pay 1 stress to give +1d6
+[b]Lead:[/b] A group action: Everyone rolls
+[b]Protect:[/b] a teammate: Take a consequence
+[b]Setup:[/b] A teammate: Improve position"
+fit_content = true
+
+[node name="HSeparator3" type="HSeparator" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+
+[node name="bonus-die" type="HBoxContainer" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/additional-rules/bonus-die"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+text = "Bonus Die"
+
+[node name="spacer" type="Control" parent="ScrollContainer/additional-rules/bonus-die"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextEdit" type="RichTextLabel" parent="ScrollContainer/additional-rules/bonus-die"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+tooltip_text = "PCs in Blades are reckless scoundrels addicted to destructive vices—they don’t always act in their own best interests. 
+To reflect this, the GM or any other player can offer you a bonus die if you accept a Devil’s Bargain. 
+
+Common Devil’s Bargains include:
+    - Collateral damage, unintended harm.
+    - Sacrifice coin or an item.
+    - Betray a friend or loved one.
+    - Offend or anger a faction.
+    - Start and/or tick a troublesome clock.
+    - Add heat to the crew from evidence or witnesses.
+    - Suffer harm.
+
+The Devil’s Bargain occurs regardless of the outcome of the roll. You make the deal, pay the price, and get the bonus die.
+
+The Devil’s Bargain is always a free choice. 
+If you don’t like one, just reject it (or suggest how to alter it so you might consider taking it). 
+You can always just push yourself for that bonus die instead.
+
+If it’s ever needed, the GM has final say over which Devil’s Bargains are valid."
+bbcode_enabled = true
+text = "Push yourself (take 2 stress)
+				---- or -----
+   Accept a Devil's Bargain"
+fit_content = true
+
+[node name="HSeparator4" type="HSeparator" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+
+[node name="Gather Information" type="HBoxContainer" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/additional-rules/Gather Information"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+text = "Gather Information"
+
+[node name="spacer" type="Control" parent="ScrollContainer/additional-rules/Gather Information"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextEdit" type="RichTextLabel" parent="ScrollContainer/additional-rules/Gather Information"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "On your friends/foes:
+- What do they intend to do?
+- How can I get them to __________?
+- What are they really feeling?
+- What should I lookout for?
+- Where's the weakness here?
+- How can I find ______?
+- What's really going on here?"
+fit_content = true
+
+[node name="HSeparator6" type="HSeparator" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+
+[node name="crewAdvancement" type="HBoxContainer" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/additional-rules/crewAdvancement"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+text = "Crew Advancement"
+
+[node name="spacer" type="Control" parent="ScrollContainer/additional-rules/crewAdvancement"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextEdit" type="RichTextLabel" parent="ScrollContainer/additional-rules/crewAdvancement"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[i]At the end of each session, for each item below, mark 1 or 2 XP if that item occurred multiple times:[/i]
+- Execute a successful ____________ operation
+- Contend with challenges above your current station
+- Bolster your crew's reputation or develop a new one
+- Express the goals, drives, inner conflict, or essential nature of the crew"
+fit_content = true
+
+[node name="HSeparator7" type="HSeparator" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+
+[node name="warAndFactionStatus" type="HBoxContainer" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/additional-rules/warAndFactionStatus"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+text = "War and
+Faction Status"
+
+[node name="spacer" type="Control" parent="ScrollContainer/additional-rules/warAndFactionStatus"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TextEdit" type="RichTextLabel" parent="ScrollContainer/additional-rules/warAndFactionStatus"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "War!
+	When you're at war with any number of factions (status -3), the following penalties apply:
+		- Lose 1 hold (temporarily while the war persists), this may knock you down a tier
+		- PCs get only 1 free downtime action instead of 2
+		- Take +1 heat from each score
+		- Your claims which generate coin (vice dens, fighting pits, fences, etc.) produce only half their normal income (round down)
+
+Status:
++3 Allies, +2 Friendly, +1 Helpful, 0 Neutral, -1 Interferring, -2 Hostile, -3 War!"
+fit_content = true
+
+[node name="HSeparator8" type="HSeparator" parent="ScrollContainer/additional-rules"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ab-and-attr" type="VBoxContainer" parent="ScrollContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="special-abilities" type="VBoxContainer" parent="ScrollContainer2/ab-and-attr"]
+custom_minimum_size = Vector2(0, 450)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="ScrollContainer2/ab-and-attr/special-abilities"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Special Abilities:"
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer2/ab-and-attr/special-abilities"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer2/ab-and-attr/special-abilities"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ScrollContainer2/ab-and-attr/special-abilities"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="special-abilities-list" type="VBoxContainer" parent="ScrollContainer2/ab-and-attr/special-abilities/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSeparator3" type="HSeparator" parent="ScrollContainer2/ab-and-attr"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="ScrollContainer2/ab-and-attr"]
+layout_mode = 2
+
+[node name="attributes" type="VBoxContainer" parent="ScrollContainer2/ab-and-attr"]
+custom_minimum_size = Vector2(0, 450)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="ScrollContainer2/ab-and-attr/attributes"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Attributes:"
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer2/ab-and-attr/attributes"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer2/ab-and-attr/attributes"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ScrollContainer2/ab-and-attr/attributes"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="attributes-list" type="VBoxContainer" parent="ScrollContainer2/ab-and-attr/attributes/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSeparator5" type="HSeparator" parent="ScrollContainer2/ab-and-attr"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="ScrollContainer2/ab-and-attr"]
+layout_mode = 2
+
+[node name="crewSpecialAbilities" type="VBoxContainer" parent="ScrollContainer2/ab-and-attr"]
+custom_minimum_size = Vector2(0, 450)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="ScrollContainer2/ab-and-attr/crewSpecialAbilities"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Crew Special Abilities:"
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer2/ab-and-attr/crewSpecialAbilities"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer2/ab-and-attr/crewSpecialAbilities"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ScrollContainer2/ab-and-attr/crewSpecialAbilities"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="crewSpecialAbilitiesList" type="VBoxContainer" parent="ScrollContainer2/ab-and-attr/crewSpecialAbilities/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSeparator7" type="HSeparator" parent="ScrollContainer2/ab-and-attr"]
+layout_mode = 2
+
+[node name="HSeparator8" type="HSeparator" parent="ScrollContainer2/ab-and-attr"]
+layout_mode = 2
+
+[node name="mapClaimTypes" type="VBoxContainer" parent="ScrollContainer2/ab-and-attr"]
+custom_minimum_size = Vector2(0, 450)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="ScrollContainer2/ab-and-attr/mapClaimTypes"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Map Claim Types:"
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer2/ab-and-attr/mapClaimTypes"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer2/ab-and-attr/mapClaimTypes"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ScrollContainer2/ab-and-attr/mapClaimTypes"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="mapClaimTypesList" type="VBoxContainer" parent="ScrollContainer2/ab-and-attr/mapClaimTypes/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

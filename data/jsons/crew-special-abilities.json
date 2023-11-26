@@ -1,0 +1,70 @@
+{
+    "": {
+        "Definition": "",
+        "Example": ""
+    },
+    "Deadly": {
+        "Definition": "Each PC may add +1 action rating to Hunt, Prowl, or Skirmish (up to a max rating of 3).",
+        "Example": "Each player may choose the action they prefer (you don’t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings."
+    },
+    "Death veil": {
+        "Definition": "Due to hard-won experience or occult ritual, you don’t take extra heat when killing is involved on a score.",
+        "Example": ""
+    },
+    "No traces": {
+        "Definition": "When you keep an operation quiet or make it look like an accident, you get half the rep value of the target (round up) instead of zero. When you end downtime with zero heat, take +1 rep.",
+        "Example": "There are many clients who value quiet operations. This ability rewards you for keeping a low-profile."
+    },
+    "Patron": {
+        "Definition": "When you advance your Tier, it costs half the coin it normally would.",
+        "Example": "Who is your patron? Why do they help you?"
+    },
+    "Predators": {
+        "Definition": "When you use a stealth or deception plan to commit murder, take +1d to the engagement roll.",
+        "Example": "This ability applies when the goal is murder. It doesn’t apply to other stealth or deception operations you attempt that happen to involve killing."
+    },
+    "Fiends": {
+        "Definition": "Fear is as good as respect. You may count each wanted level as if it were turf.",
+        "Example": "The maximum wanted level is 4. Regardless of how much turf you hold (from this ability or otherwise) the minimum rep cost to advance your Tier is always 6."
+    },
+    "Forged in the fire": {
+        "Definition": "Each PC has been toughened by cruel experience. You get +1d to resistance rolls.",
+        "Example": "This ability applies to PCs in the crew. It doesn’t confer any special toughness to your cohorts."
+    },
+    "War dogs": {
+        "Definition": "When you’re at war (-3 faction status), your crew does not suffer -1 hold and PCs still get two downtime activities, instead of just one.",
+        "Example": ""
+    },
+    "Anointed": {
+        "Definition": "You gain +1d to resistance rolls against supernatural threats. You get +1d to healing rolls when you have supernatural harm.",
+        "Example": ""
+    },
+    "Accord": {
+        "Definition": "Sometimes friends are as good as territory. You may treat up to three +3 faction statuses you hold as if they are turf.",
+        "Example": "If your status changes, you lose the turf until it becomes +3 again. Regardless of how much turf you hold (from this ability or otherwise) the minimum rep cost to advance your Tier is always 6."
+    },
+    "High society": {
+        "Definition": "It’s all about who you know. Take -1 heat during downtime and +1d to gather information about the city’s elite.",
+        "Example": ""
+    },
+    "Pack rats": {
+        "Definition": "Your lair is a jumble of stolen items. When you roll to acquire an asset, take +1d.",
+        "Example": "This ability might mean that you actually have the item you need in your pile of stuff, or it could mean you have extra odds and ends to barter with."
+    },
+    "Second story": {
+        "Definition": "When you execute a clandestine infiltration, you get +1d to the engagement roll.",
+        "Example": ""
+    },
+    "Synchronized": {
+        "Definition": "When you perform a group action, you may count multiple 6s from different rolls as a critical success.",
+        "Example": "Lyric leads a group action to Attune to the ghost field to overcome a magical ward on the arcane locked door. Emily, Lyric’s player, rolls and gets a 6, and so does Matt! Because the crew has Synchronized, their two separate 6s count as a critical success on the roll."
+    },
+    "All hands": {
+        "Definition": "During downtime, one of your cohorts may perform a downtime activity for the crew to acquire an asset, reduce heat, or work on a long-term project.",
+        "Example": ""
+    },
+    "Just passing through": {
+        "Definition": "During downtime, take -1 heat. When your heat is 4 or less, you get +1d to deceive people when you pass yourselves off as ordinary citizens.",
+        "Example": ""
+    }
+}

@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbohtweyrnu50"]
+
+[ext_resource type="Theme" uid="uid://dbgyax5rcfc1o" path="res://src/common/journal-theme.tres" id="1"]
+[ext_resource type="Script" path="res://src/journal/Journal.gd" id="2"]
+[ext_resource type="Script" path="res://src/journal/JournalEntries.gd" id="3"]
+
+[node name="Journal" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1")
+script = ExtResource("2")
+
+[node name="Entries" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="JournalEntries" type="VBoxContainer" parent="Entries" groups=["Persist"]]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="NewEntry" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 66)
+layout_mode = 2
+text = "New Entry"
+icon_alignment = 1
+
+[node name="RemoveLastEntry" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 66)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Remove Last Entry"
+icon_alignment = 1
+
+[connection signal="button_up" from="HBoxContainer/NewEntry" to="." method="_on_new_entry_button_up"]
+[connection signal="button_up" from="HBoxContainer/RemoveLastEntry" to="." method="_on_RemoveLastEntry_button_up"]

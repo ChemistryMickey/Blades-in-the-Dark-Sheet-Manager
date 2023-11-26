@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://xk0t7fox4p0r"]
+
+[ext_resource type="Script" path="res://src/character/left-block/friend.gd" id="1_4rava"]
+
+[node name="Friend" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_4rava")
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0.866667, 0, 1)
+text = "Friend?"
+
+[node name="CheckBox2" type="CheckBox" parent="."]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.913725, 0, 0, 1)
+text = "Foe?"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Friend, Description"

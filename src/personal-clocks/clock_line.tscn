@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccdt0w7tb2ldc"]
+
+[ext_resource type="Script" path="res://src/personal-clocks/clock_line.gd" id="1_v7b0v"]
+
+[node name="personalClockLine" type="Control"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource("1_v7b0v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.0823529)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="segments" type="SpinBox" parent="HBoxContainer"]
+layout_mode = 2
+max_value = 18.0
+alignment = 1
+suffix = "/?"
+
+[node name="descEdit" type="TextEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Description"
+wrap_mode = 1
+
+[connection signal="toggled" from="HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]

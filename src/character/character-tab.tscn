@@ -1,0 +1,991 @@
+[gd_scene load_steps=12 format=3 uid="uid://tuid5wqpe5nc"]
+
+[ext_resource type="PackedScene" uid="uid://bqtpk84wndros" path="res://src/character/equipment/equipment.tscn" id="1_dggcv"]
+[ext_resource type="Script" path="res://src/character/left-block/info.gd" id="1_kke8y"]
+[ext_resource type="PackedScene" uid="uid://b4w8p57ap5ont" path="res://src/character/special-abilities/abilities.tscn" id="1_wr1rc"]
+[ext_resource type="Script" path="res://src/character/left-block/stress-and-trauma.gd" id="2_a3oys"]
+[ext_resource type="Script" path="res://src/character/left-block/harm-healing-armour.gd" id="3_xeqvc"]
+[ext_resource type="Script" path="res://src/character/left-block/shady-friends.gd" id="4_ojxcv"]
+[ext_resource type="Script" path="res://src/character/center-block/class-desc.gd" id="5_jm5yd"]
+[ext_resource type="Script" path="res://src/character/special-abilities/exp.gd" id="6_rppfa"]
+[ext_resource type="Script" path="res://src/character/right-block/coin-and-stash.gd" id="8_xa0qo"]
+[ext_resource type="Script" path="res://src/character/right-block/load.gd" id="9_246xq"]
+[ext_resource type="Script" path="res://src/character/right-block/attributes.gd" id="9_gjswu"]
+
+[node name="Character" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="basic" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="info" type="VBoxContainer" parent="basic" groups=["Persist"]]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+script = ExtResource("1_kke8y")
+
+[node name="b1" type="HBoxContainer" parent="basic/info"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="name" type="LineEdit" parent="basic/info/b1"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+placeholder_text = "Name"
+alignment = 1
+
+[node name="alias" type="LineEdit" parent="basic/info/b1"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+placeholder_text = "Alias"
+alignment = 1
+
+[node name="looks" type="TextEdit" parent="basic/info"]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Looks"
+
+[node name="b2" type="HBoxContainer" parent="basic/info"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="heritage" type="LineEdit" parent="basic/info/b2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+tooltip_text = "Akoros, The Dagger Isles, Iruvia, Severos, Skovlan, Tycheros"
+placeholder_text = "Heritage"
+alignment = 1
+
+[node name="background" type="LineEdit" parent="basic/info/b2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+tooltip_text = "Academic, Labor, Law, Trade, Military, Noble, Underworld"
+placeholder_text = "Background"
+alignment = 1
+
+[node name="vice" type="LineEdit" parent="basic/info"]
+layout_mode = 2
+tooltip_text = "Faith, Gambling, Luxury, Obligation, Pleasure, Stupor, Weird
+
+Please also include who is your vice provider."
+placeholder_text = "Vice & Provided by..."
+
+[node name="HSeparator" type="HSeparator" parent="basic"]
+layout_mode = 2
+
+[node name="stress-and-trauma" type="HBoxContainer" parent="basic" groups=["Persist"]]
+layout_mode = 2
+script = ExtResource("2_a3oys")
+
+[node name="stress" type="HBoxContainer" parent="basic/stress-and-trauma"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="stress-label" type="Label" parent="basic/stress-and-trauma/stress"]
+layout_mode = 2
+text = "Stress: "
+
+[node name="spacer" type="Control" parent="basic/stress-and-trauma/stress"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="stress-val" type="SpinBox" parent="basic/stress-and-trauma/stress"]
+layout_mode = 2
+size_flags_horizontal = 2
+max_value = 7.0
+alignment = 1
+suffix = "/7"
+
+[node name="trauma" type="HBoxContainer" parent="basic/stress-and-trauma"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="trauma-label" type="Label" parent="basic/stress-and-trauma/trauma"]
+layout_mode = 2
+text = "Trauma: "
+
+[node name="spacer" type="Control" parent="basic/stress-and-trauma/trauma"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="trauma-val" type="SpinBox" parent="basic/stress-and-trauma/trauma"]
+layout_mode = 2
+size_flags_horizontal = 2
+max_value = 4.0
+alignment = 1
+suffix = "/4"
+
+[node name="HSeparator2" type="HSeparator" parent="basic"]
+layout_mode = 2
+
+[node name="harm-healing-armour" type="HBoxContainer" parent="basic" groups=["Persist"]]
+layout_mode = 2
+script = ExtResource("3_xeqvc")
+
+[node name="harm-table" type="VBoxContainer" parent="basic/harm-healing-armour"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Label" type="Label" parent="basic/harm-healing-armour/harm-table"]
+layout_mode = 2
+text = "Harm:"
+
+[node name="grievous" type="HBoxContainer" parent="basic/harm-healing-armour/harm-table"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="basic/harm-healing-armour/harm-table/grievous"]
+layout_mode = 2
+text = "3"
+
+[node name="LineEdit" type="LineEdit" parent="basic/harm-healing-armour/harm-table/grievous"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Grievous Wound"
+alignment = 1
+
+[node name="Label2" type="Label" parent="basic/harm-healing-armour/harm-table/grievous"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Need
+Help"
+horizontal_alignment = 1
+
+[node name="major" type="HBoxContainer" parent="basic/harm-healing-armour/harm-table"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="basic/harm-healing-armour/harm-table/major"]
+layout_mode = 2
+text = "2"
+
+[node name="LineEdit" type="LineEdit" parent="basic/harm-healing-armour/harm-table/major"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Major Wound"
+alignment = 1
+
+[node name="LineEdit2" type="LineEdit" parent="basic/harm-healing-armour/harm-table/major"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Major Wound"
+alignment = 1
+
+[node name="Label2" type="Label" parent="basic/harm-healing-armour/harm-table/major"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "-1D6  "
+horizontal_alignment = 1
+
+[node name="minor" type="HBoxContainer" parent="basic/harm-healing-armour/harm-table"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="basic/harm-healing-armour/harm-table/minor"]
+layout_mode = 2
+text = "1"
+
+[node name="LineEdit" type="LineEdit" parent="basic/harm-healing-armour/harm-table/minor"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Minor Wound"
+alignment = 1
+
+[node name="LineEdit2" type="LineEdit" parent="basic/harm-healing-armour/harm-table/minor"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Minor Wound"
+alignment = 1
+
+[node name="Label2" type="Label" parent="basic/harm-healing-armour/harm-table/minor"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Less
+Effect"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="VSeparator" parent="basic/harm-healing-armour"]
+layout_mode = 2
+
+[node name="healing" type="VBoxContainer" parent="basic/harm-healing-armour"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="basic/harm-healing-armour/healing"]
+layout_mode = 2
+text = "Healing"
+
+[node name="HSeparator" type="HSeparator" parent="basic/harm-healing-armour/healing"]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="basic/harm-healing-armour/healing"]
+layout_mode = 2
+max_value = 4.0
+alignment = 1
+suffix = "/4"
+
+[node name="HSeparator" type="VSeparator" parent="basic/harm-healing-armour"]
+layout_mode = 2
+
+[node name="armour" type="VBoxContainer" parent="basic/harm-healing-armour"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="basic/harm-healing-armour/armour"]
+layout_mode = 2
+text = "Armour Uses"
+
+[node name="HSeparator" type="HSeparator" parent="basic/harm-healing-armour/armour"]
+layout_mode = 2
+
+[node name="uses" type="VBoxContainer" parent="basic/harm-healing-armour/armour"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="basic/harm-healing-armour/armour/uses"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="basic/harm-healing-armour/armour/uses/HBoxContainer"]
+layout_mode = 2
+text = "Armour: "
+
+[node name="Control" type="Control" parent="basic/harm-healing-armour/armour/uses/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="CheckBox" parent="basic/harm-healing-armour/armour/uses/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="basic/harm-healing-armour/armour/uses"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="basic/harm-healing-armour/armour/uses/HBoxContainer2"]
+layout_mode = 2
+text = "Heavy: "
+
+[node name="Control" type="Control" parent="basic/harm-healing-armour/armour/uses/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="CheckBox" parent="basic/harm-healing-armour/armour/uses/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="basic/harm-healing-armour/armour/uses"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="basic/harm-healing-armour/armour/uses/HBoxContainer3"]
+layout_mode = 2
+text = "Special: "
+
+[node name="Control" type="Control" parent="basic/harm-healing-armour/armour/uses/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="CheckBox" parent="basic/harm-healing-armour/armour/uses/HBoxContainer3"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="basic"]
+layout_mode = 2
+
+[node name="shady-friends" type="VBoxContainer" parent="basic" groups=["Persist"]]
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("4_ojxcv")
+
+[node name="VSeparator" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="abilities" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="class-desc" type="HBoxContainer" parent="abilities" groups=["Persist"]]
+layout_mode = 2
+script = ExtResource("5_jm5yd")
+
+[node name="class" type="LineEdit" parent="abilities/class-desc"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 34
+placeholder_text = "Class name"
+alignment = 1
+
+[node name="description" type="TextEdit" parent="abilities/class-desc"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_font_sizes/font_size = 12
+placeholder_text = "Class
+Description"
+wrap_mode = 1
+
+[node name="HSeparator" type="HSeparator" parent="abilities"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="abilities"]
+layout_mode = 2
+
+[node name="exp" type="HBoxContainer" parent="abilities" groups=["Persist"]]
+layout_mode = 2
+script = ExtResource("6_rppfa")
+
+[node name="Label" type="Label" parent="abilities/exp"]
+layout_mode = 2
+text = "Special Abilities:"
+
+[node name="Control" type="Control" parent="abilities/exp"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="abilities/exp"]
+layout_mode = 2
+text = "Exp:"
+
+[node name="SpinBox" type="SpinBox" parent="abilities/exp"]
+layout_mode = 2
+max_value = 8.0
+alignment = 1
+suffix = "/8"
+
+[node name="HSeparator2" type="HSeparator" parent="abilities"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="abilities"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="abilities"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="abilities" parent="abilities/ScrollContainer" instance=ExtResource("1_wr1rc")]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="skills-and-inventory" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="coin-and-stash" type="HBoxContainer" parent="skills-and-inventory" groups=["Persist"]]
+layout_mode = 2
+script = ExtResource("8_xa0qo")
+
+[node name="coin" type="HBoxContainer" parent="skills-and-inventory/coin-and-stash"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="skills-and-inventory/coin-and-stash/coin"]
+layout_mode = 2
+text = "Coin"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="skills-and-inventory/coin-and-stash/coin"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="skills-and-inventory/coin-and-stash/coin/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/coin-and-stash/coin/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/coin-and-stash/coin/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/coin-and-stash/coin/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="skills-and-inventory/coin-and-stash"]
+layout_mode = 2
+
+[node name="stash" type="HBoxContainer" parent="skills-and-inventory/coin-and-stash"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="skills-and-inventory/coin-and-stash/stash"]
+layout_mode = 2
+text = "Stash"
+
+[node name="GridContainer" type="GridContainer" parent="skills-and-inventory/coin-and-stash/stash"]
+layout_mode = 2
+columns = 10
+
+[node name="CheckBox" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox6" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox7" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox8" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox9" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox10" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox11" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox12" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox13" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox14" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox15" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox16" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox17" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox18" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox19" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox20" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox21" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox22" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox23" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox24" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox25" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox26" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox27" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox28" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox29" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox30" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox31" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox32" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox33" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox34" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox35" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox36" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox37" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox38" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox39" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="CheckBox40" type="CheckBox" parent="skills-and-inventory/coin-and-stash/stash/GridContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="skills-and-inventory"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="skills-and-inventory"]
+layout_mode = 2
+
+[node name="attributes" type="VBoxContainer" parent="skills-and-inventory" groups=["Persist"]]
+layout_mode = 2
+script = ExtResource("9_gjswu")
+
+[node name="Insight" type="VBoxContainer" parent="skills-and-inventory/attributes"]
+layout_mode = 2
+
+[node name="header" type="HBoxContainer" parent="skills-and-inventory/attributes/Insight"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="skills-and-inventory/attributes/Insight/header"]
+layout_mode = 2
+text = "Insight:"
+
+[node name="Control" type="Control" parent="skills-and-inventory/attributes/Insight/header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="skills-and-inventory/attributes/Insight/header"]
+layout_mode = 2
+text = "Exp: "
+
+[node name="SpinBox" type="SpinBox" parent="skills-and-inventory/attributes/Insight/header"]
+layout_mode = 2
+alignment = 1
+suffix = "/6"
+
+[node name="skills" type="HBoxContainer" parent="skills-and-inventory/attributes/Insight"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="skills-and-inventory/attributes/Insight/skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="rank1" type="VBoxContainer" parent="skills-and-inventory/attributes/Insight/skills"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank1"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank1"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank1"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank1"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="skills-and-inventory/attributes/Insight/skills"]
+layout_mode = 2
+
+[node name="rank2" type="VBoxContainer" parent="skills-and-inventory/attributes/Insight/skills"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank2"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank2"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank2"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank2"]
+layout_mode = 2
+
+[node name="rank3" type="VBoxContainer" parent="skills-and-inventory/attributes/Insight/skills"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank3"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank3"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank3"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank3"]
+layout_mode = 2
+
+[node name="rank4" type="VBoxContainer" parent="skills-and-inventory/attributes/Insight/skills"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank4"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank4"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank4"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/attributes/Insight/skills/rank4"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="skills-and-inventory/attributes/Insight/skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="labels" type="VBoxContainer" parent="skills-and-inventory/attributes/Insight/skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="Label" parent="skills-and-inventory/attributes/Insight/skills/labels"]
+layout_mode = 2
+text = "Hunt"
+
+[node name="CheckBox2" type="Label" parent="skills-and-inventory/attributes/Insight/skills/labels"]
+layout_mode = 2
+text = "Study"
+
+[node name="CheckBox3" type="Label" parent="skills-and-inventory/attributes/Insight/skills/labels"]
+layout_mode = 2
+text = "Survey"
+
+[node name="CheckBox4" type="Label" parent="skills-and-inventory/attributes/Insight/skills/labels"]
+layout_mode = 2
+text = "Tinker"
+
+[node name="HSeparator2" type="HSeparator" parent="skills-and-inventory/attributes"]
+layout_mode = 2
+
+[node name="Prowess" type="VBoxContainer" parent="skills-and-inventory/attributes"]
+layout_mode = 2
+
+[node name="header" type="HBoxContainer" parent="skills-and-inventory/attributes/Prowess"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="skills-and-inventory/attributes/Prowess/header"]
+layout_mode = 2
+text = "Prowess:"
+
+[node name="Control" type="Control" parent="skills-and-inventory/attributes/Prowess/header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="skills-and-inventory/attributes/Prowess/header"]
+layout_mode = 2
+text = "Exp: "
+
+[node name="SpinBox" type="SpinBox" parent="skills-and-inventory/attributes/Prowess/header"]
+layout_mode = 2
+alignment = 1
+suffix = "/6"
+
+[node name="skills" type="HBoxContainer" parent="skills-and-inventory/attributes/Prowess"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="skills-and-inventory/attributes/Prowess/skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="rank1" type="VBoxContainer" parent="skills-and-inventory/attributes/Prowess/skills"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank1"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank1"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank1"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank1"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="skills-and-inventory/attributes/Prowess/skills"]
+layout_mode = 2
+
+[node name="rank2" type="VBoxContainer" parent="skills-and-inventory/attributes/Prowess/skills"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank2"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank2"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank2"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank2"]
+layout_mode = 2
+
+[node name="rank3" type="VBoxContainer" parent="skills-and-inventory/attributes/Prowess/skills"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank3"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank3"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank3"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank3"]
+layout_mode = 2
+
+[node name="rank4" type="VBoxContainer" parent="skills-and-inventory/attributes/Prowess/skills"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank4"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank4"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank4"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/attributes/Prowess/skills/rank4"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="skills-and-inventory/attributes/Prowess/skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="labels" type="VBoxContainer" parent="skills-and-inventory/attributes/Prowess/skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="Label" parent="skills-and-inventory/attributes/Prowess/skills/labels"]
+layout_mode = 2
+text = "Finesse"
+
+[node name="CheckBox2" type="Label" parent="skills-and-inventory/attributes/Prowess/skills/labels"]
+layout_mode = 2
+text = "Prowl"
+
+[node name="CheckBox3" type="Label" parent="skills-and-inventory/attributes/Prowess/skills/labels"]
+layout_mode = 2
+text = "Skirmish"
+
+[node name="CheckBox4" type="Label" parent="skills-and-inventory/attributes/Prowess/skills/labels"]
+layout_mode = 2
+text = "Wreck"
+
+[node name="HSeparator3" type="HSeparator" parent="skills-and-inventory/attributes"]
+layout_mode = 2
+
+[node name="Resolve" type="VBoxContainer" parent="skills-and-inventory/attributes"]
+layout_mode = 2
+
+[node name="header" type="HBoxContainer" parent="skills-and-inventory/attributes/Resolve"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="skills-and-inventory/attributes/Resolve/header"]
+layout_mode = 2
+text = "Resolve:"
+
+[node name="Control" type="Control" parent="skills-and-inventory/attributes/Resolve/header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="skills-and-inventory/attributes/Resolve/header"]
+layout_mode = 2
+text = "Exp: "
+
+[node name="SpinBox" type="SpinBox" parent="skills-and-inventory/attributes/Resolve/header"]
+layout_mode = 2
+alignment = 1
+suffix = "/6"
+
+[node name="skills" type="HBoxContainer" parent="skills-and-inventory/attributes/Resolve"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="skills-and-inventory/attributes/Resolve/skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="rank1" type="VBoxContainer" parent="skills-and-inventory/attributes/Resolve/skills"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank1"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank1"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank1"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank1"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="skills-and-inventory/attributes/Resolve/skills"]
+layout_mode = 2
+
+[node name="rank2" type="VBoxContainer" parent="skills-and-inventory/attributes/Resolve/skills"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank2"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank2"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank2"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank2"]
+layout_mode = 2
+
+[node name="rank3" type="VBoxContainer" parent="skills-and-inventory/attributes/Resolve/skills"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank3"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank3"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank3"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank3"]
+layout_mode = 2
+
+[node name="rank4" type="VBoxContainer" parent="skills-and-inventory/attributes/Resolve/skills"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank4"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank4"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank4"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="skills-and-inventory/attributes/Resolve/skills/rank4"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="skills-and-inventory/attributes/Resolve/skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="labels" type="VBoxContainer" parent="skills-and-inventory/attributes/Resolve/skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="Label" parent="skills-and-inventory/attributes/Resolve/skills/labels"]
+layout_mode = 2
+text = "Attune"
+
+[node name="CheckBox2" type="Label" parent="skills-and-inventory/attributes/Resolve/skills/labels"]
+layout_mode = 2
+text = "Command"
+
+[node name="CheckBox3" type="Label" parent="skills-and-inventory/attributes/Resolve/skills/labels"]
+layout_mode = 2
+text = "Consort"
+
+[node name="CheckBox4" type="Label" parent="skills-and-inventory/attributes/Resolve/skills/labels"]
+layout_mode = 2
+text = "Sway"
+
+[node name="HSeparator3" type="HSeparator" parent="skills-and-inventory"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="skills-and-inventory"]
+layout_mode = 2
+
+[node name="load" type="VBoxContainer" parent="skills-and-inventory" groups=["Persist"]]
+layout_mode = 2
+tooltip_text = "This is one of the only things you need to decide before engaging in a job.
+The heavier your load, the more items you may retroactively decide to have brought but the GM is allowed to add difficulty depending on your load level."
+script = ExtResource("9_246xq")
+
+[node name="Label" type="Label" parent="skills-and-inventory/load"]
+layout_mode = 2
+text = "Load"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="skills-and-inventory/load"]
+layout_mode = 2
+
+[node name="light" type="HBoxContainer" parent="skills-and-inventory/load/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="CheckBox" parent="skills-and-inventory/load/HBoxContainer/light"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="skills-and-inventory/load/HBoxContainer/light"]
+layout_mode = 2
+text = "3 Light"
+
+[node name="normal" type="HBoxContainer" parent="skills-and-inventory/load/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="CheckBox" parent="skills-and-inventory/load/HBoxContainer/normal"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="skills-and-inventory/load/HBoxContainer/normal"]
+layout_mode = 2
+text = "5 Normal"
+
+[node name="heavy" type="HBoxContainer" parent="skills-and-inventory/load/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="CheckBox" parent="skills-and-inventory/load/HBoxContainer/heavy"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="skills-and-inventory/load/HBoxContainer/heavy"]
+layout_mode = 2
+text = "6+ Heavy"
+
+[node name="HSeparator5" type="HSeparator" parent="skills-and-inventory"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="skills-and-inventory"]
+layout_mode = 2
+
+[node name="equipment" type="VBoxContainer" parent="skills-and-inventory"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="skills-and-inventory/equipment"]
+layout_mode = 2
+text = "Equipment"
+
+[node name="HSeparator" type="HSeparator" parent="skills-and-inventory/equipment"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="skills-and-inventory/equipment"]
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="equipment" parent="skills-and-inventory/equipment/ScrollContainer" instance=ExtResource("1_dggcv")]
+layout_mode = 2

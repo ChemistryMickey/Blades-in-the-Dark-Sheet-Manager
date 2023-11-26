@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://dymquysk3goht"]
+
+[ext_resource type="Script" path="res://src/factions/faction_line.gd" id="1_xjpbu"]
+
+[node name="factionLine" type="HBoxContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_xjpbu")
+
+[node name="subfaction" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Subfaction name"
+mouse_filter = 1
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="tier" type="Label" parent="."]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+tooltip_text = "Subfaction tier (power)"
+mouse_filter = 1
+text = "T"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="hold" type="Label" parent="."]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+tooltip_text = "Subfaction hold on their territories"
+mouse_filter = 1
+text = "H"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator3" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="status" type="SpinBox" parent="."]
+layout_mode = 2
+tooltip_text = "-3 - +3 range.
+See \"Info\" for more info."
+min_value = -3.0
+max_value = 3.0
+alignment = 1
+
+[connection signal="value_changed" from="status" to="." method="_on_status_value_changed"]

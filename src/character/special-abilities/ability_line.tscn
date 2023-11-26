@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg1gcxn134ttu"]
+
+[ext_resource type="Script" path="res://src/character/special-abilities/ability_line.gd" id="1_qudvs"]
+
+[node name="ability-line" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_qudvs")
+
+[node name="proficient" type="CheckBox" parent="."]
+layout_mode = 2
+
+[node name="ability" type="OptionButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="desc" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+
+[connection signal="item_selected" from="ability" to="." method="_on_ability_item_selected"]

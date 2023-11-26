@@ -1,0 +1,711 @@
+[gd_scene load_steps=11 format=3 uid="uid://cb45i0te26alc"]
+
+[ext_resource type="Script" path="res://src/crew/contactsAndHuntingGrounds.gd" id="1_2w5fj"]
+[ext_resource type="Script" path="res://src/crew/heatAndCoin.gd" id="1_oot51"]
+[ext_resource type="Script" path="res://src/crew/leftBlock.gd" id="1_ou28c"]
+[ext_resource type="Script" path="res://src/crew/crew.gd" id="1_sw4he"]
+[ext_resource type="Script" path="res://src/crew/lairUpgrades.gd" id="5_1p0yv"]
+[ext_resource type="Script" path="res://src/character/center-block/class-desc.gd" id="5_a2or1"]
+[ext_resource type="Script" path="res://src/crew/cohorts.gd" id="5_ax64p"]
+[ext_resource type="Script" path="res://src/crew/crewUpgrades.gd" id="6_0kbjc"]
+[ext_resource type="Script" path="res://src/character/special-abilities/exp.gd" id="6_xorpg"]
+[ext_resource type="PackedScene" uid="uid://cxpw7mx3cpl0r" path="res://src/crew/crew_abilities.tscn" id="7_l7kmq"]
+
+[node name="Crew" type="HBoxContainer" groups=["Persist"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_sw4he")
+
+[node name="leftBlock" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_ou28c")
+
+[node name="info" type="HBoxContainer" parent="leftBlock"]
+layout_mode = 2
+
+[node name="name" type="LineEdit" parent="leftBlock/info"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Crew Name"
+alignment = 1
+
+[node name="reputation" type="LineEdit" parent="leftBlock/info"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Reputation"
+alignment = 1
+
+[node name="lairName" type="LineEdit" parent="leftBlock"]
+layout_mode = 2
+placeholder_text = "Lair Name"
+
+[node name="HSeparator" type="HSeparator" parent="leftBlock"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="leftBlock"]
+layout_mode = 2
+
+[node name="claimsStats" type="HBoxContainer" parent="leftBlock"]
+layout_mode = 2
+
+[node name="rep" type="SpinBox" parent="leftBlock/claimsStats"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 12.0
+alignment = 1
+prefix = "Rep: "
+suffix = "/12"
+
+[node name="turf" type="SpinBox" parent="leftBlock/claimsStats"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 6.0
+alignment = 1
+prefix = "Turf: "
+suffix = "/6"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="leftBlock/claimsStats"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="leftBlock/claimsStats/HBoxContainer"]
+layout_mode = 2
+text = "Hold: "
+
+[node name="weak" type="CheckBox" parent="leftBlock/claimsStats/HBoxContainer"]
+layout_mode = 2
+text = "Weak"
+
+[node name="strong" type="CheckBox" parent="leftBlock/claimsStats/HBoxContainer"]
+layout_mode = 2
+text = "Strong"
+
+[node name="tier" type="SpinBox" parent="leftBlock/claimsStats"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 4.0
+alignment = 1
+prefix = "Tier: "
+suffix = "/4"
+
+[node name="HSeparator3" type="HSeparator" parent="leftBlock"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="leftBlock"]
+layout_mode = 2
+
+[node name="heatAndCoin" type="HBoxContainer" parent="leftBlock"]
+layout_mode = 2
+script = ExtResource("1_oot51")
+
+[node name="heatAndWanted" type="HBoxContainer" parent="leftBlock/heatAndCoin"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="heat" type="SpinBox" parent="leftBlock/heatAndCoin/heatAndWanted"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 9.0
+alignment = 1
+prefix = "Heat:"
+suffix = "/9"
+
+[node name="wanted" type="SpinBox" parent="leftBlock/heatAndCoin/heatAndWanted"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 4.0
+alignment = 1
+prefix = "Wanted:"
+suffix = "/4"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="leftBlock/heatAndCoin"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="leftBlock/heatAndCoin/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Coin"
+
+[node name="HSeparator" type="HSeparator" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="coinBoxes" type="HBoxContainer" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer/coinBoxes"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer/coinBoxes"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer/coinBoxes"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer/coinBoxes"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="leftBlock/heatAndCoin/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="leftBlock/heatAndCoin/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Vaults"
+
+[node name="HSeparator" type="HSeparator" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="vaultBoxes" type="HBoxContainer" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox1" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="CheckBox6" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="CheckBox7" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="CheckBox8" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="CheckBox9" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="CheckBox10" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="CheckBox11" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="CheckBox12" type="CheckBox" parent="leftBlock/heatAndCoin/HBoxContainer/VBoxContainer2/vaultBoxes"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="leftBlock"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="leftBlock"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="leftBlock"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="contactsAndHuntingGrounds" type="HBoxContainer" parent="leftBlock/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_2w5fj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="leftBlock/ScrollContainer/contactsAndHuntingGrounds"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="leftBlock/ScrollContainer/contactsAndHuntingGrounds/VBoxContainer"]
+layout_mode = 2
+text = "Contacts"
+
+[node name="HSeparator" type="HSeparator" parent="leftBlock/ScrollContainer/contactsAndHuntingGrounds/VBoxContainer"]
+layout_mode = 2
+
+[node name="contactsList" type="VBoxContainer" parent="leftBlock/ScrollContainer/contactsAndHuntingGrounds/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="leftBlock/ScrollContainer/contactsAndHuntingGrounds"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="leftBlock/ScrollContainer/contactsAndHuntingGrounds/VBoxContainer2"]
+layout_mode = 2
+text = "Hunting Grounds"
+
+[node name="HSeparator" type="HSeparator" parent="leftBlock/ScrollContainer/contactsAndHuntingGrounds/VBoxContainer2"]
+layout_mode = 2
+
+[node name="huntingGroundsList" type="VBoxContainer" parent="leftBlock/ScrollContainer/contactsAndHuntingGrounds/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="playbook" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="class-desc" type="HBoxContainer" parent="playbook"]
+layout_mode = 2
+script = ExtResource("5_a2or1")
+
+[node name="class" type="LineEdit" parent="playbook/class-desc"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 34
+placeholder_text = "Crew Type"
+alignment = 1
+
+[node name="description" type="TextEdit" parent="playbook/class-desc"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_font_sizes/font_size = 12
+placeholder_text = "Crew
+Description"
+wrap_mode = 1
+
+[node name="HSeparator" type="HSeparator" parent="playbook"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="playbook"]
+layout_mode = 2
+
+[node name="exp" type="HBoxContainer" parent="playbook"]
+layout_mode = 2
+script = ExtResource("6_xorpg")
+
+[node name="Label" type="Label" parent="playbook/exp"]
+layout_mode = 2
+text = "Special Abilities:"
+
+[node name="Control" type="Control" parent="playbook/exp"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="playbook/exp"]
+layout_mode = 2
+text = "Exp:"
+
+[node name="SpinBox" type="SpinBox" parent="playbook/exp"]
+layout_mode = 2
+max_value = 8.0
+alignment = 1
+suffix = "/8"
+
+[node name="HSeparator2" type="HSeparator" parent="playbook"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="playbook"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="playbook"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="crewAbilities" parent="playbook/ScrollContainer" instance=ExtResource("7_l7kmq")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="scrollUpgrades" type="ScrollContainer" parent="."]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="upgrades" type="VBoxContainer" parent="scrollUpgrades"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="cohorts" type="VBoxContainer" parent="scrollUpgrades/upgrades"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("5_ax64p")
+
+[node name="HSeparator2" type="HSeparator" parent="scrollUpgrades/upgrades"]
+layout_mode = 2
+
+[node name="crewUpgrades" type="VBoxContainer" parent="scrollUpgrades/upgrades"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/crewUpgrades"]
+layout_mode = 2
+text = "Crew Upgrades"
+
+[node name="upgradesList" type="VBoxContainer" parent="scrollUpgrades/upgrades/crewUpgrades"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("6_0kbjc")
+
+[node name="HSeparator3" type="HSeparator" parent="scrollUpgrades/upgrades"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="scrollUpgrades/upgrades"]
+layout_mode = 2
+
+[node name="lairUpgrades" type="VBoxContainer" parent="scrollUpgrades/upgrades"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("5_1p0yv")
+
+[node name="a" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="lair" type="VBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair"]
+layout_mode = 2
+text = "Lair"
+
+[node name="carriage" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/carriage"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/carriage"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/carriage"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Carriage"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="boat" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/boat"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/boat"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/boat"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Boat"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="hidden" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/hidden"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/hidden"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hidden"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="quarters" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/quarters"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/quarters"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quarters"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="secure" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/secure"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/secure"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/secure"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Secure"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="vault" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/vault"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/vault"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/vault"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Vault"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="workshop" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/workshop"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/lair/workshop"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Workshop"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="scrollUpgrades/upgrades/lairUpgrades/a"]
+layout_mode = 2
+
+[node name="quality" type="VBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality"]
+layout_mode = 2
+text = "Quality"
+
+[node name="documents" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/documents"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/documents"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Documents"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="gear" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/gear"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/gear"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gear"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="implements" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/implements"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/implements"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Implements"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="petSpecial" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/petSpecial"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/petSpecial"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pet/Special"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="supplies" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/supplies"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/supplies"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Supplies"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="tools" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/tools"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/tools"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Tools"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="weapons" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/weapons"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/a/quality/weapons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Weapons"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="scrollUpgrades/upgrades/lairUpgrades"]
+layout_mode = 2
+
+[node name="b" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="training" type="VBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/b"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/b/training"]
+layout_mode = 2
+text = "Training"
+
+[node name="insight" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/b/training"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/insight"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/insight"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Insight"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="prowess" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/b/training"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/prowess"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/prowess"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Prowess"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="resolve" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/b/training"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/resolve"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/resolve"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resolve"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="playbook" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/b/training"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/playbook"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/playbook"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Playbook"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="mastery" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/b/training"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/mastery"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/mastery"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/mastery"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/mastery"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/b/training/mastery"]
+layout_mode = 2
+text = "Mastery"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="scrollUpgrades/upgrades/lairUpgrades/b"]
+layout_mode = 2
+
+[node name="cohorts" type="VBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/b"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/b/cohorts"]
+layout_mode = 2
+text = "Cohorts
+(upgrade costs)"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/b/cohorts"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/b/cohorts/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "New Cohort:"
+
+[node name="Label2" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/b/cohorts/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2"
+horizontal_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="scrollUpgrades/upgrades/lairUpgrades/b/cohorts"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/b/cohorts/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add Type:"
+
+[node name="Label2" type="Label" parent="scrollUpgrades/upgrades/lairUpgrades/b/cohorts/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2"
+horizontal_alignment = 2

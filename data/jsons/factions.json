@@ -1,0 +1,252 @@
+{
+    "Criminal Underworld": {
+        "The Unseen": {
+            "Tier": 4,
+            "Hold": "S"
+        },
+        "The Hive": {
+            "Tier": 4,
+            "Hold": "S"
+        },
+        "The Circle of Flame": {
+            "Tier": 3,
+            "Hold": "S"
+        },
+        "The Silver Nails": {
+            "Tier": 3,
+            "Hold": "S"
+        },
+        "Lord Scurlock": {
+            "Tier": 3,
+            "Hold": "S"
+        },
+        "The Crows": {
+            "Tier": 2,
+            "Hold": "W"
+        },
+        "The Lampblacks": {
+            "Tier": 2,
+            "Hold": "W"
+        },
+        "The Red Sashes": {
+            "Tier": 2,
+            "Hold": "W"
+        },
+        "The Dimmer Sisters": {
+            "Tier": 2,
+            "Hold": "S"
+        },
+        "The Grinders": {
+            "Tier": 2,
+            "Hold": "W"
+        },
+        "The Billhooks": {
+            "Tier": 2,
+            "Hold": "W"
+        },
+        "The Wraiths": {
+            "Tier": 2,
+            "Hold": "W"
+        },
+        "The Gray Cloaks": {
+            "Tier": 2,
+            "Hold": "S"
+        },
+        "Ulf Ironborn": {
+            "Tier": 1,
+            "Hold": "S"
+        },
+        "The Fog Hounds": {
+            "Tier": 1,
+            "Hold": "W"
+        },
+        "The Lost": {
+            "Tier": 1,
+            "Hold": "W"
+        }
+    },
+    "City Institutions": {
+        "Imperial Military": {
+            "Tier": 6,
+            "Hold": "S"
+        },
+        "City Council": {
+            "Tier": 5,
+            "Hold": "S"
+        },
+        "Ministry of Preservation": {
+            "Tier": 5,
+            "Hold": "S"
+        },
+        "Leviathan Hunters": {
+            "Tier": 5,
+            "Hold": "S"
+        },
+        "Ironhook Prison": {
+            "Tier": 4,
+            "Hold": "S"
+        },
+        "Sparkwrights": {
+            "Tier": 4,
+            "Hold": "S"
+        },
+        "Spirit Wardens": {
+            "Tier": 4,
+            "Hold": "S"
+        },
+        "Bluecoats": {
+            "Tier": 3,
+            "Hold": "S"
+        },
+        "Inspectors": {
+            "Tier": 3,
+            "Hold": "S"
+        },
+        "Iruvian Consulate": {
+            "Tier": 3,
+            "Hold": "S"
+        },
+        "Skovlan Consulate": {
+            "Tier": 3,
+            "Hold": "W"
+        },
+        "The Brigade": {
+            "Tier": 2,
+            "Hold": "S"
+        },
+        "Severosi Consulate": {
+            "Tier": 1,
+            "Hold": "S"
+        },
+        "Dagger Isles Consulate": {
+            "Tier": 1,
+            "Hold": "S"
+        }
+    },
+    "Labor & Trade": {
+        "The Foundation": {
+            "Tier": 4,
+            "Hold": "S"
+        },
+        "Dockers": {
+            "Tier": 3,
+            "Hold": "S"
+        },
+        "Gondoliers": {
+            "Tier": 3,
+            "Hold": "S"
+        },
+        "Sailors": {
+            "Tier": 3,
+            "Hold": "W"
+        },
+        "Laborers": {
+            "Tier": 3,
+            "Hold": "W"
+        },
+        "Cabbies": {
+            "Tier": 2,
+            "Hold": "W"
+        },
+        "Cyphers": {
+            "Tier": 2,
+            "Hold": "S"
+        },
+        "Ink Rakes": {
+            "Tier": 2,
+            "Hold": "W"
+        },
+        "Rail Jacks": {
+            "Tier": 2,
+            "Hold": "W"
+        },
+        "Servants": {
+            "Tier": 2,
+            "Hold": "W"
+        }
+    },
+    "Citizenry": {
+        "Whitecrown": {
+            "Tier": 5,
+            "Hold": "S"
+        },
+        "Brightstone": {
+            "Tier": 4,
+            "Hold": "S"
+        },
+        "Charterhall": {
+            "Tier": 4,
+            "Hold": "S"
+        },
+        "Six Towers": {
+            "Tier": 3,
+            "Hold": "W"
+        },
+        "Silkshore": {
+            "Tier": 2,
+            "Hold": "S"
+        },
+        "Nightmarket": {
+            "Tier": 2,
+            "Hold": "S"
+        },
+        "Crow's Foot": {
+            "Tier": 2,
+            "Hold": "S"
+        },
+        "The Docks": {
+            "Tier": 2,
+            "Hold": "S"
+        },
+        "Barrowcleft": {
+            "Tier": 2,
+            "Hold": "S"
+        },
+        "Coalridge": {
+            "Tier": 2,
+            "Hold": "W"
+        },
+        "Charhollow": {
+            "Tier": 1,
+            "Hold": "S"
+        },
+        "Dunslough": {
+            "Tier": 1,
+            "Hold": "W"
+        }
+    },
+    "The Fringe": {
+        "The Churge of Ecstasy": {
+            "Tier": 4,
+            "Hold": "S"
+        },
+        "The Horde": {
+            "Tier": 3,
+            "Hold": "S"
+        },
+        "The Path of Echoes": {
+            "Tier": 3,
+            "Hold": "S"
+        },
+        "The Forgotten Gods": {
+            "Tier": 3,
+            "Hold": "S"
+        },
+        "The Reconciled": {
+            "Tier": 3,
+            "Hold": "S"
+        },
+        "Skovlander Refugees": {
+            "Tier": 3,
+            "Hold": "W"
+        },
+        "The Weeping Lady": {
+            "Tier": 2,
+            "Hold": "S"
+        },
+        "Deadlands Scavengers": {
+            "Tier": 2,
+            "Hold": "W"
+        }
+    }
+}

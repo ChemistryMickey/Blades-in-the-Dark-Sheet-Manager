@@ -1,0 +1,122 @@
+[gd_scene load_steps=13 format=3 uid="uid://6c4x1qq66bb0"]
+
+[ext_resource type="Script" path="res://top-sheet.gd" id="1_0i1on"]
+[ext_resource type="PackedScene" uid="uid://tuid5wqpe5nc" path="res://src/character/character-tab.tscn" id="1_ik2t7"]
+[ext_resource type="PackedScene" uid="uid://3fp15o71j4l1" path="res://src/info/info.tscn" id="2_aoxe3"]
+[ext_resource type="PackedScene" uid="uid://dbohtweyrnu50" path="res://src/journal/Journal.tscn" id="2_rsi71"]
+[ext_resource type="PackedScene" uid="uid://crm7aq3f8bahv" path="res://src/character-development/character_development.tscn" id="3_1mm4a"]
+[ext_resource type="PackedScene" uid="uid://b85qws1wxyi5e" path="res://src/scratch/scratch.tscn" id="3_jnenv"]
+[ext_resource type="PackedScene" uid="uid://cb45i0te26alc" path="res://src/crew/crew.tscn" id="3_wf1dj"]
+[ext_resource type="PackedScene" uid="uid://sn6ocsxa0ijj" path="res://src/personal-clocks/personal_clocks.tscn" id="4_mvcjs"]
+[ext_resource type="PackedScene" uid="uid://bgeb6rry6ta2a" path="res://src/districts/districts.tscn" id="5_h8vs8"]
+[ext_resource type="PackedScene" uid="uid://ddhrlt888n4sm" path="res://src/factions/factions.tscn" id="7_v6dct"]
+
+[sub_resource type="Animation" id="Animation_4rro3"]
+resource_name = "fade"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.160784), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ac5q0"]
+_data = {
+"fade": SubResource("Animation_4rro3")
+}
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_0i1on")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Character" parent="TabContainer" instance=ExtResource("1_ik2t7")]
+layout_mode = 2
+
+[node name="Crew" parent="TabContainer" instance=ExtResource("3_wf1dj")]
+visible = false
+layout_mode = 2
+
+[node name="Personal Clocks" parent="TabContainer" instance=ExtResource("4_mvcjs")]
+visible = false
+layout_mode = 2
+
+[node name="Journal" parent="TabContainer" instance=ExtResource("2_rsi71")]
+visible = false
+layout_mode = 2
+
+[node name="Districts" parent="TabContainer" instance=ExtResource("5_h8vs8")]
+visible = false
+layout_mode = 2
+
+[node name="Factions" parent="TabContainer" instance=ExtResource("7_v6dct")]
+visible = false
+layout_mode = 2
+
+[node name="Info" parent="TabContainer" instance=ExtResource("2_aoxe3")]
+visible = false
+layout_mode = 2
+
+[node name="Scratch" parent="TabContainer" instance=ExtResource("3_jnenv")]
+visible = false
+layout_mode = 2
+
+[node name="Character Development" parent="TabContainer" instance=ExtResource("3_1mm4a")]
+visible = false
+layout_mode = 2
+
+[node name="SaveFlash" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SaveFlash"]
+libraries = {
+"": SubResource("AnimationLibrary_ac5q0")
+}
+
+[node name="SaveFile" type="FileDialog" parent="."]
+initial_position = 2
+size = Vector2i(914, 800)
+dialog_text = "Save File..."
+dialog_hide_on_ok = true
+access = 2
+filters = PackedStringArray("*.json")
+
+[node name="LoadFile" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 2
+size = Vector2i(914, 800)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.json")
+
+[connection signal="file_selected" from="SaveFile" to="." method="_on_save_file_file_selected"]
+[connection signal="file_selected" from="LoadFile" to="." method="_on_load_file_file_selected"]

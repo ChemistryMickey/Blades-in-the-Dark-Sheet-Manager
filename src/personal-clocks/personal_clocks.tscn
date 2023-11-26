@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=3 uid="uid://sn6ocsxa0ijj"]
+
+[ext_resource type="Script" path="res://src/personal-clocks/personal_clocks.gd" id="1_4odrj"]
+
+[node name="Personal Clocks" type="VBoxContainer" groups=["Persist"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_4odrj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Discuss starting a personal project clock with your DM!
+
+This can be something specific to your character like finding key info for your background, acquiring a Macguffin, gaining someone's trust, etc."
+mouse_filter = 1
+text = "New Clock Template
+(Not Saved!)"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="current" type="SpinBox" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.5
+max_value = 16.0
+alignment = 1
+prefix = "Current: "
+
+[node name="maximum" type="SpinBox" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.5
+max_value = 16.0
+alignment = 1
+prefix = "Total Segments: "
+
+[node name="description" type="TextEdit" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Clock Description"
+wrap_mode = 1
+
+[node name="Control2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="add" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Add Clock"
+
+[node name="remove" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Remove Selected Clocks"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="clockContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="pressed" from="HBoxContainer/add" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="HBoxContainer/remove" to="." method="_on_remove_pressed"]

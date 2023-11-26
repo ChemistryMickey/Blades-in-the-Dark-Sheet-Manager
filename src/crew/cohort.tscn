@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://boi6vcu8hakew"]
+
+[ext_resource type="Script" path="res://src/crew/cohort.gd" id="1_x4udl"]
+
+[node name="cohort" type="VBoxContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x4udl")
+
+[node name="header" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="header"]
+layout_mode = 2
+text = "Cohort"
+
+[node name="Control" type="Control" parent="header"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="LineEdit" type="LineEdit" parent="header"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Type"
+
+[node name="status" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="weak" type="CheckBox" parent="status"]
+layout_mode = 2
+text = "Weak"
+
+[node name="impared" type="CheckBox" parent="status"]
+layout_mode = 2
+text = "Impared"
+
+[node name="broken" type="CheckBox" parent="status"]
+layout_mode = 2
+text = "Broken"
+
+[node name="armour" type="CheckBox" parent="status"]
+layout_mode = 2
+text = "Armour"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+placeholder_text = "Who, what, where, why, when, how"
