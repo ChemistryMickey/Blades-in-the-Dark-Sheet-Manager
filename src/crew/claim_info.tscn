@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://d382ugihoy58x"]
+
+[ext_resource type="Script" path="res://src/crew/claim_info.gd" id="1_61tt6"]
+
+[node name="claimInfo" type="VBoxContainer"]
+offset_right = 120.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+script = ExtResource("1_61tt6")
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 10
+alignment = 1
+text_overrun_behavior = 3
+clip_text = true
+fit_to_longest_item = false
+
+[node name="ColorRect" type="ColorRect" parent="OptionButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.577008, 0.577008, 0.577008, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OptionButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]

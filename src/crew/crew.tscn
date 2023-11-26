@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cb45i0te26alc"]
+[gd_scene load_steps=13 format=3 uid="uid://cb45i0te26alc"]
 
 [ext_resource type="Script" path="res://src/crew/contactsAndHuntingGrounds.gd" id="1_2w5fj"]
 [ext_resource type="Script" path="res://src/crew/heatAndCoin.gd" id="1_oot51"]
 [ext_resource type="Script" path="res://src/crew/leftBlock.gd" id="1_ou28c"]
 [ext_resource type="Script" path="res://src/crew/crew.gd" id="1_sw4he"]
+[ext_resource type="PackedScene" uid="uid://d382ugihoy58x" path="res://src/crew/claim_info.tscn" id="3_2ehtj"]
+[ext_resource type="Script" path="res://src/crew/claims.gd" id="3_dxei4"]
 [ext_resource type="Script" path="res://src/crew/lairUpgrades.gd" id="5_1p0yv"]
 [ext_resource type="Script" path="res://src/character/center-block/class-desc.gd" id="5_a2or1"]
 [ext_resource type="Script" path="res://src/crew/cohorts.gd" id="5_ax64p"]
@@ -98,6 +100,289 @@ suffix = "/4"
 layout_mode = 2
 
 [node name="HSeparator2" type="HSeparator" parent="leftBlock"]
+layout_mode = 2
+
+[node name="claims" type="GridContainer" parent="leftBlock"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 9
+script = ExtResource("3_dxei4")
+
+[node name="claim1" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim1" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="connector1" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="claim2" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim2" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="connector2" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="claim3" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim3" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="empty1" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(1, 1, 1, 0)
+
+[node name="claim4" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim4" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="connector3" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="claim5" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim5" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="connector4" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="empty2" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="empty3" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="empty4" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="connector5" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="empty5" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="connector6" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="empty6" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="connector7" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="claim6" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim6" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="connector8" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="claim7" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim7" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="connector9" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="lair" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LineEdit" type="RichTextLabel" parent="leftBlock/claims/lair"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center][b]Lair[/b][/center]"
+fit_content = true
+
+[node name="connector10" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="claim8" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim8" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="connector11" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="claim9" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim9" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="connector12" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="empty7" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="connector13" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="empty8" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="connector14" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="empty9" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="empty10" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="empty11" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="connector15" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="claim10" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim10" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="connector16" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="claim11" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim11" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="empty12" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="claim12" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim12" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="connector17" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="claim13" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim13" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="connector18" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="claim14" type="ColorRect" parent="leftBlock/claims"]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+
+[node name="claimInfo" parent="leftBlock/claims/claim14" instance=ExtResource("3_2ehtj")]
+layout_mode = 0
+
+[node name="HSeparator7" type="HSeparator" parent="leftBlock"]
+layout_mode = 2
+
+[node name="HSeparator8" type="HSeparator" parent="leftBlock"]
 layout_mode = 2
 
 [node name="heatAndCoin" type="HBoxContainer" parent="leftBlock"]

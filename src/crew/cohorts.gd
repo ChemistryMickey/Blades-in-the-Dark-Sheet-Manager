@@ -7,7 +7,6 @@ func _ready():
 	for i in range(n_cohorts):
 		var new_cohort = cohort_template.instantiate();
 		self.add_child(new_cohort);
-		self.add_child(HSeparator.new());
 		
 func save() -> Dictionary:
 	var save_dict = {"Cohorts": []};

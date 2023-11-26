@@ -9,6 +9,7 @@ func save() -> Dictionary:
 	save_dict["Crew"].merge($playbook/ScrollContainer/crewAbilities.save());
 	save_dict["Crew"].merge($playbook/exp.save());
 	save_dict["Crew"].merge($"playbook/class-desc".save());
+	save_dict["Crew"].merge($leftBlock/claims.save());
 	return save_dict;
 	
 func load_sheet(sheet_dict: Dictionary) -> void:
@@ -20,3 +21,4 @@ func load_sheet(sheet_dict: Dictionary) -> void:
 	$playbook/ScrollContainer/crewAbilities.load_sheet(sheet_dict);
 	$playbook/exp.load_sheet(sheet_dict);
 	$"playbook/class-desc".load_sheet(sheet_dict);
+	$leftBlock/claims.load_sheet(sheet_dict);
